@@ -25,9 +25,6 @@ Our final dataset that will be used for our models contains the season that the 
 ## Key Variables
 Our target variable is **win-label**, which labels which team won the game. A 1 means the first team won, a 0 means the team who's stats were subtracted won. 
 
-
-### 3P%_diff,AST_diff,FG%_diff,FT%_diff,SRS_diff,TOV_diff,TRB_diff,seed_diff,win_pct_diff,win_label,season
-
  The difference for the following stats:
     - 3p%: The percentage of 3 point attempts made by a team.
     - AST: An assist is a pass that leads to a made basket.
