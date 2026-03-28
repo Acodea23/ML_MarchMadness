@@ -26,7 +26,7 @@ Note any missing-value handling
 Note any duplicates removed
 Note any column renaming or filtering
 
-# Summary Statistics - Corbin
+# Summary Statistics
 
 ## Numeric Variables
 All numeric variables have 1,068 observations, indicating a complete dataset with no missing values for these features.
@@ -416,8 +416,6 @@ Visualization 2
 Placeholder for figure
 Explanation: what it shows & why it’s relevant
 
-# Challenges and Reflection - Corbin
+# Challenges and Reflection
 
-Challenges faced in dataset selection or preprocessing
-Concerns or challenges currently facing in the project
-Short reflection/insight
+ One of the first decisions was finding a reliable source of both team statistics and tournament game results. Sports Reference was chosen for its comprehensive and consistently structured historical data going back to 2015, and because no single pre-built dataset existed that combined season stats with tournament matchup outcomes in the format needed for this model. However, scraping it directly came with its own complications. The site's multi-level HTML headers caused pandas to generate duplicate and unnamed columns like Unnamed: 8_level_1, wins, wins.1, and wins.2, each representing different record splits such as conference, home, and away records, but with no clear labels out of the box. These had to be manually renamed to meaningful identifiers before the data was usable. Team name inconsistencies added another layer of difficulty, as names did not always match between the season stats and tournament game datasets. Issues like Albany (NY) versus Albany, trailing NCAA suffixes, non-breaking spaces (\xa0), and asterisks all had to be explicitly caught and cleaned, and any mismatch that slipped through would silently drop an entire game from the training data as a failed merge. Finally, rather than feeding raw stats into the model, features were engineered as difference values between the winner and loser for each game. Metrics like SRS_diff, FG%_diff, and seed_diff were computed for every matchup, and the dataset was then mirrored from the loser's perspective with all signs flipped and the label set to 0, ensuring the model saw balanced examples rather than a one-sided view where positive differences always meant a win.
