@@ -178,7 +178,7 @@ Binary outcome variable:
 - 1 = win
 - 0 = loss
 
-Because each matchup is represented from both perspectives, the dataset is balanced by construction, making it suitable for classification without concern for outcome imbalance.
+Because each matchup is represented from both perspectives, the dataset is balanced (534 wins and losses) by construction, making it suitable for classification without concern for outcome imbalance.
 
 season
 
