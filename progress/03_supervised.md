@@ -22,7 +22,7 @@ Performance metrics used and final values
 
 | Model Type | Key Hyperparameters Explored | Validation Setup | Performance Metrics & Final Values |
 | :--- | :--- | :--- | :--- |
-| **Logistic Regression** | `C` (0.001 to 100.0)<br>`penalty` ('l1', 'l2')<br>`solver` ('liblinear', 'saga') | **Train/Test Split:** Time-based (Train: 2015–2022, Test: 2023–2025)<br>**Tuning:** 5-fold Cross-Validation via `GridSearchCV` | **Metrics Targeted:** Accuracy, Classification Report, Confusion Matrix<br>**Test Accuracy:** 0.7580<br>**Precision:** 0.76<br>**Recall:** 0.76<br>**F1Score** 0.76 |
+| **Logistic Regression** | `C` (0.001 to 100.0)<br>`penalty` ('l1', 'l2')<br>`solver` ('liblinear', 'saga') | **Train/Test Split:** Time-based (Train: 2015–2022, Test: 2023–2025)<br>**Tuning:** 5-fold Cross-Validation via `GridSearchCV` | **Test Accuracy:** 0.7580<br>**Precision:** 0.76<br>**Recall:** 0.76<br>**F1Score** 0.76 |
 | **Random Forest Classifier** | `n_estimators` (100–800)<br>`max_depth` (None, 5–30)<br>`min_samples_split` (2–19)<br>`min_samples_leaf` (1–7)<br>`max_features` ('sqrt', 'log2', None)<br>`bootstrap` (True, False) | **Train/Test Split:** Time-based (Train: <= 2022, Test: >= 2023)<br>**Tuning:** 5-fold Cross-Validation via `RandomizedSearchCV` (50 iterations) | **Best CV AUC:** 0.7480<br>**Test Accuracy:** 0.7675<br>**Test ROC-AUC:** 0.8419 |
 | **Baseline Heuristic** | **None** (Rule-based: team with the lower `seed_diff` wins; `SRS_diff` used as tiebreaker) | **Evaluation:** Tested directly on the test set (Seasons > 2022) without prior training/tuning | **Test Accuracy:** 0.7070 |
 
