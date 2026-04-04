@@ -53,3 +53,7 @@ This explainability output gives us confidence that the model is behaving sensib
 Summarize key insights gained from supervised learning.
 Explain how this analysis answers your research question.
 
+We learned a lot of things from these supervised learning strategies. One thing we learned is that we can predict March Madness tournament game outcomes consistently, more effectively than by simply choosing the team with the lower seed to win each game. Random forest proved to be the most effective model for mkaing these predictions, with an accuracy of .7675, and we determined that accuracy is an effective evaluation metric because the dataset is balanced and the false positive and false negative has equal cost. We also learned that SRS differential is the most important contirbuter, which makes sense since it is a measurement of overall team quality. Seed differential was the least contributing feature, which makes sense when we realize that seeding is determined based on other characteristics of the team, many of which we included in our models. So overall, it does answer our research question of who will win the game, with the biggest contributer being the team with a higher SRS.
+
+
+
