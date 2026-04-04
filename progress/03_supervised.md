@@ -32,8 +32,15 @@ One challenge we faced, is determing how many years of tournament games to use. 
 
 
 # 4. Explainability and Interpretability
-Present one explainability output and interpret what it suggests about model
-behavior.
+To interpret our random forest model's behavior, we extracted feature importances using scikit-learn's built-in feature_importances_ attribute on the best estimator returned by RandomizedSearchCV. This metric reflects each feature's average reduction in Gini impurity across all splits and all trees in the ensemble. Features used more often and higher in the trees receive greater importance scores.
+
+The results show that SRS differential dominates all other features with an importance of 0.504, meaning it alone accounts for over half of the model's splitting decisions. This is consistent with what SRS measures: a team's average point margin adjusted for strength of schedule, making it a rich composite signal of overall team quality. The model effectively learned what coaches and analysts already know, that SRS is among the most predictive single-number summaries of a team.
+
+The remaining features contributed more modestly. Rebound differential (0.093) and assist differential (0.088) were next, capturing possession control and ball movement. Win percentage differential (0.067) and free throw percentage differential (0.061) followed, with shooting efficiency metrics, turnovers, and seed rounding out the list.
+
+Interestingly, seed differential ranked last at 0.039, despite being the backbone of our baseline model. This suggests that seeding, while a useful heuristic, is largely a coarser summary of information the model can already extract more precisely from raw statistics. The random forest effectively deprioritized seed once it had access to the underlying performance data.
+
+This explainability output gives us confidence that the model is behaving sensibly and learning real basketball signal rather than spurious patterns. It also validates our baseline feature choices while explaining why the random forest improves upon them.
 
 
 # 5. Final Takeaways
