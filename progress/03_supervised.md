@@ -1,14 +1,3 @@
-Baseline Mod - Matthew
-Logistic Regression - Isaac
-Random Forrest - Corbin
-
-most important features
-forest
-SRS diff,
-double others,
-TRB,seed,AST
-
-
 # 1. Problem Context and Research Question
 When two teams face each other in the NCAA Men's Basketball Tournament, who will win the game? Our goal is to consistintly predict the winner using available season statistics and tournament matchup data.
 
