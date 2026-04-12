@@ -52,7 +52,7 @@ Here is the Feature loadings for the first three principal components for the re
 
 And here it is for the advanced data:
 
-![Alt text](Screenshot%202026-04-11%20202577.png)
+![Alt text](Screenshot%202026-04-11%20202557.png)
 
 The accuracy for the PCA Random Forest: 0.7548
 
