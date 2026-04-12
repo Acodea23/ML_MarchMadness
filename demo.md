@@ -27,8 +27,8 @@ This was data from every team that played in the NCAA basketball tournament from
 
 To prepare our data and make it useful for running models, we created a new dataset that had the difference between the two teams for each feature. So for example, if team A had 10 wins and team B had 20 wins, then the feature "win_diff" would be -10. We also created a target variable called "result", which was 1 if team A won and 0 if team B won. This way, we could run our models on the differences between the teams and predict the probability of team A winning. We also created an advanced version of the dataset with additional feature differences.Here is a screenshot of the top of the datasets, first of the difference dataset and then of the advanced difference dataset:
 
-![DAtaset](Screenshot 2026-04-11 195401.png)
-![Advanced Dataset](Screenshot 2026-04-11 201510.png)
+![Alt text]('Screenshot 2026-04-11 195401.png')
+![Alt text]('Screenshot 2026-04-11 201510.png')
 
 We ran three models: a baseline, in which othe higher seed was always predicted to win, a logistic regression model, and a random forest model. We trained our models on the data from 2015 to 2022, and tested them on the data from 2023-2025. We evaluated our models using accuracy.
 
