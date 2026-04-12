@@ -72,10 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-variables" class="level2">
 <h2 class="anchored" data-anchor-id="key-variables">Key Variables</h2>
 <p>Our target variable is <strong>win-label</strong>, which labels which team won the game. A 1 means the first team won, a 0 means the team who’s stats were subtracted won.</p>
-<section id="p_diffast_difffg_diffft_diffsrs_difftov_difftrb_diffseed_diffwin_pct_diffwin_labelseason" class="level3">
-<h3 class="anchored" data-anchor-id="p_diffast_difffg_diffft_diffsrs_difftov_difftrb_diffseed_diffwin_pct_diffwin_labelseason">3P%_diff,AST_diff,FG%_diff,FT%_diff,SRS_diff,TOV_diff,TRB_diff,seed_diff,win_pct_diff,win_label,season</h3>
 <p>The difference for the following stats: - 3p%: The percentage of 3 point attempts made by a team. - AST: An assist is a pass that leads to a made basket. - FG% This is the percentage of all field goal attempts that are made. - FT%: This is the percentage of all free throw shots that are made. - SRS: A rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings. - TOV: Turnovers, when the ball is given to the other team without a shot attempt. - TRB: Total Rebounds, when a shot is missed and the team grabs the ball this is a rebound. - Seed: How the tournament organizes the teams. Lower is better. They are 1-16. - win-pct: The percentage of games a team won.</p>
-</section>
 </section>
 <section id="preprocessing-steps" class="level2">
 <h2 class="anchored" data-anchor-id="preprocessing-steps">Preprocessing Steps</h2>
@@ -864,8 +861,27 @@ seed_diff
 
 <section id="visual-exploration---issacc" class="level1">
 <h1>Visual Exploration - Issacc</h1>
-<p>Visualization 1 Placeholder for figure Explanation: what it shows &amp; why it’s relevant</p>
-<p>Visualization 2 Placeholder for figure Explanation: what it shows &amp; why it’s relevant</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="totupsets.png" class="img-fluid figure-img"></p>
+<figcaption>Alt text</figcaption>
+</figure>
+</div>
+<p>This graph shows the overall seeds with the most number of upsets, so it allows us to see what seeds seem to pull off upsets more frequently.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="statsvwins.png" class="img-fluid figure-img"></p>
+<figcaption>Alt text</figcaption>
+</figure>
+</div>
+<p>This shows the team statistics that seem to relate most to getting a win. Unsuprisingly, the teams with stronger statistics in each of the four displayed have a higher likelihood of winning according to the boxplots, but the higher 3P% is only slightly higher for the winning team than the losing team according to the boxplot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="diffsgraphic.png" class="img-fluid figure-img"></p>
+<figcaption>Alt text</figcaption>
+</figure>
+</div>
+<p>This graphic shows much of what’s displayed in the table before the graphs. The stat differential that seemed to predict a win that was highest was SRS, or strenth rating score for teams. The lowest was seed, which makes sense since better teams get a lower-numbered seed while the worse teams generally get higher-numbered seeds.</p>
 </section>
 <section id="challenges-and-reflection" class="level1">
 <h1>Challenges and Reflection</h1>

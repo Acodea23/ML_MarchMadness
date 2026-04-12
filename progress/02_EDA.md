@@ -423,15 +423,15 @@ Overall team strength indicators (SRS_diff, seed_diff, win_pct_diff) dominate as
 
 # Visual Exploration - Issacc
 
-![Alt text](totupsets.png)
+![Alt text](images/totupsets.png)
 
 This graph shows the overall seeds with the most number of upsets, so it allows us to see what seeds seem to pull off upsets more frequently.
 
-![Alt text](statsvwins.png)
+![Alt text](images/statsvwins.png)
 
 This shows the team statistics that seem to relate most to getting a win. Unsuprisingly, the teams with stronger statistics in each of the four displayed have a higher likelihood of winning according to the boxplots, but the higher 3P% is only slightly higher for the winning team than the losing team according to the boxplot.
 
-![Alt text](diffsgraphic.png)
+![Alt text](images/diffsgraphic.png)
 
 This graphic shows much of what's displayed in the table before the graphs. The stat differential that seemed to predict a win that was highest was SRS, or strenth rating score for teams. The lowest was seed, which makes sense since better teams get a lower-numbered seed while the worse teams generally get higher-numbered seeds.
 
