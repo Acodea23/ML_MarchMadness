@@ -190,6 +190,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1000x600 with 2 Axes>
+![Alt text](screeplotearlier2.png)
 ```
 
 
@@ -252,6 +253,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1100x700 with 1 Axes>
+![Alt text](pcavpc2redblue.png)
 ```
 
 
@@ -289,6 +291,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1200x900 with 1 Axes>
+![Alt text](3dpcascatterearlierone.png)
 ```
 
 
@@ -541,6 +544,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1000x600 with 2 Axes>
+![Alt text](screeplotearlier2.png)
 ```
 
 
@@ -603,6 +607,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1100x700 with 1 Axes>
+![Alt text](pcaonlypc1vpc2.png)
 ```
 
 
@@ -640,6 +645,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1200x900 with 1 Axes>
+![Alt text](3dpcascatter.png)
 ```
 
 
@@ -849,6 +855,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1000x600 with 2 Axes>
+![Alt text](screeplot.png)
 ```
 
 
@@ -914,6 +921,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1100x700 with 1 Axes>
+![Alt text](pc1vpc2.png)
 ```
 
 
@@ -1125,6 +1133,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1000x600 with 2 Axes>
+![Alt text](screeplot.png)
 ```
 
 
@@ -1190,6 +1199,7 @@ plt.show()
 *Output:*
 ```
 <Figure size 1100x700 with 1 Axes>
+![Alt text](pc1vpc2.png)
 ```
 
 
