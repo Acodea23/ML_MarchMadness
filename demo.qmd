@@ -40,19 +40,19 @@ After evaluating this, we determined that the random forest model was the best, 
 
 For the explained variance by principal component, we found these results:
 
-![plot](output.png)
+![Alt text](output.png)
 
 for the advanced data, this was the explained variance:
-![advanced plot](outputadv.png)
+![Alt text](outputadv.png)
 
 
 Here is the Feature loadings for the first three principal components for the regular data:
 
-![loadings](Screenshot 2026-04-11 202340.png)
+![Alt text]('Screenshot 2026-04-11 202340.png')
 
 And here it is for the advanced data:
 
-![advanced loadings](Screenshot 2026-04-11 202577.png)
+![Alt text]('Screenshot 2026-04-11 202577.png')
 
 The accuracy for the PCA Random Forest: 0.7548
 
