@@ -25,10 +25,9 @@ Cleandata.ipynb is the notebook that shows how we scraped and created our datase
 
 This was data from every team that played in the NCAA basketball tournament from 2015 to 2023. We have 30 features for each team, and the year that they played in the tournament.
 
-To prepare our data and make it useful for running models, we created a new dataset that had the difference between the two teams for each feature. So for example, if team A had 10 wins and team B had 20 wins, then the feature "win_diff" would be -10. We also created a target variable called "result", which was 1 if team A won and 0 if team B won. This way, we could run our models on the differences between the teams and predict the probability of team A winning. We also created an advanced version of the dataset with additional feature differences.Here is a screenshot of the top of the datasets, first of the difference dataset and then of the advanced difference dataset:
+To prepare our data and make it useful for running models, we created a new dataset that had the difference between the two teams for each feature. So for example, if team A had 10 wins and team B had 20 wins, then the feature "win_diff" would be -10. We also created a target variable called "result", which was 1 if team A won and 0 if team B won. This way, we could run our models on the differences between the teams and predict the probability of team A winning. Here is a screenshot of the top of the dataset:
 
 ![Alt text](Screenshot%202026-04-11%20195401.png)
-![Alt text](Screenshot%202026-04-11%20201510.png)
 
 We ran three models: a baseline, in which othe higher seed was always predicted to win, a logistic regression model, and a random forest model. We trained our models on the data from 2015 to 2022, and tested them on the data from 2023-2025. We evaluated our models using accuracy.
 
@@ -42,21 +41,15 @@ For the explained variance by principal component, we found these results:
 
 ![Alt text](output.png)
 
-for the advanced data, this was the explained variance:
-![Alt text](outputadv.png)
 
 
 Here is the Feature loadings for the first three principal components for the regular data:
 
 ![Alt text](Screenshot%202026-04-11%20202340.png)
 
-And here it is for the advanced data:
-
-![Alt text](Screenshot%202026-04-11%20202557.png)
 
 The accuracy for the PCA Random Forest: 0.7548
 
-Accuracy for the PCA Random Forest with advanced data: 0.7357
 
 
 Overall, the PCA feature engineering did not improve our model, but it was a good exercise to see how it worked and to see the explained variance and feature loadings. We think that the random forest model without PCA is the best model for our data.
