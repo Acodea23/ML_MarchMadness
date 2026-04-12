@@ -6,7 +6,7 @@ This notebook performs PCA on `data/tournament_model_ml.csv`, visualizes explain
 ---
 
 
-```python
+```{python}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,7 +24,7 @@ plt.rcParams['figure.figsize'] = (10, 6)
 ---
 
 
-```python
+```{python}
 # Load the dataset
 df = pd.read_csv('data/tournament_model_ml.csv')
 
@@ -68,7 +68,7 @@ This notebook performs PCA on `data/tournament_model_ml.csv`, visualizes explain
 ---
 
 
-```python
+```{python}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -86,7 +86,7 @@ plt.rcParams['figure.figsize'] = (10, 6)
 ---
 
 
-```python
+```{python}
 # Load the dataset
 df = pd.read_csv('data/tournament_model_ml.csv')
 
@@ -116,7 +116,7 @@ Feature columns: ['3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 'SRS_diff', 'T
 ---
 
 
-```python
+```{python}
 # Fit PCA with scaling on the training set
 pipeline = Pipeline([
     ('scaler', StandardScaler()),
@@ -167,7 +167,7 @@ Cumulative explained variance:
 ---
 
 
-```python
+```{python}
 # Scree plot and cumulative variance plot
 pc_labels = [f'PC{i+1}' for i in range(len(explained_variance))]
 
@@ -196,7 +196,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Project the data onto the first three principal components
 n_components = 3
 pca_model = PCA(n_components=n_components)
@@ -224,7 +224,7 @@ train_pca_inspect.head()
 ---
 
 
-```python
+```{python}
 # 2D scatter plot for PC1 vs PC2
 pca_train_plot = train_pca_inspect.copy()
 pca_train_plot['win_label'] = pca_train_plot['win_label'].astype(str)
@@ -258,7 +258,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # 3D scatter plot for PC1, PC2, and PC3
 fig = plt.figure(figsize=(12, 9))
 ax = fig.add_subplot(111, projection='3d')
@@ -295,7 +295,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Feature loadings for the first three principal components
 loadings = pd.DataFrame(
     pca_model.components_.T,
@@ -323,7 +323,7 @@ win_pct_diff  0.407 -0.064 -0.046
 ---
 
 
-```python
+```{python}
 # Transform the test set with the same scaler and PCA model
 X_test_scaled = pipeline.named_steps['scaler'].transform(X_test)
 X_test_pca = pd.DataFrame(
@@ -359,7 +359,7 @@ X_test_pca shape: (314, 3)
 ---
 
 
-```python
+```{python}
 # Save PCA-transformed datasets to CSV files
 X_train_pca.to_csv('data/pca_train_ml.csv', index=False)
 X_test_pca.to_csv('data/pca_test_ml.csv', index=False)
@@ -387,7 +387,7 @@ Saved combined PCA dataset to data/pca_all_ml.csv
 ---
 
 
-```python
+```{python}
 # Save the full PCA DataFrame to CSV
 combined_pca.to_csv('data/pca_df.csv', index=False)
 print('Saved PCA combined dataframe to data/pca_df.csv')
@@ -419,7 +419,7 @@ This notebook performs PCA on `data/tournament_model_ml.csv`, visualizes explain
 ---
 
 
-```python
+```{python}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -437,7 +437,7 @@ plt.rcParams['figure.figsize'] = (10, 6)
 ---
 
 
-```python
+```{python}
 # Load the dataset
 df = pd.read_csv('data/tournament_model_ml.csv')
 
@@ -467,7 +467,7 @@ Feature columns: ['3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 'SRS_diff', 'T
 ---
 
 
-```python
+```{python}
 # Fit PCA with scaling on the training set
 pipeline = Pipeline([
     ('scaler', StandardScaler()),
@@ -518,7 +518,7 @@ Cumulative explained variance:
 ---
 
 
-```python
+```{python}
 # Scree plot and cumulative variance plot
 pc_labels = [f'PC{i+1}' for i in range(len(explained_variance))]
 
@@ -547,7 +547,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Project the data onto the first three principal components
 n_components = 3
 pca_model = PCA(n_components=n_components)
@@ -575,7 +575,7 @@ train_pca_inspect.head()
 ---
 
 
-```python
+```{python}
 # 2D scatter plot for PC1 vs PC2
 pca_train_plot = train_pca_inspect.copy()
 pca_train_plot['win_label'] = pca_train_plot['win_label'].astype(str)
@@ -609,7 +609,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # 3D scatter plot for PC1, PC2, and PC3
 fig = plt.figure(figsize=(12, 9))
 ax = fig.add_subplot(111, projection='3d')
@@ -646,7 +646,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Feature loadings for the first three principal components
 loadings = pd.DataFrame(
     pca_model.components_.T,
@@ -674,7 +674,7 @@ win_pct_diff  0.407 -0.064 -0.046
 ---
 
 
-```python
+```{python}
 # Transform the test set with the same scaler and PCA model
 X_test_scaled = pipeline.named_steps['scaler'].transform(X_test)
 X_test_pca = pd.DataFrame(
@@ -726,7 +726,7 @@ This notebook performs principal component analysis on `data/tournament_model_ml
 ---
 
 
-```python
+```{python}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -743,7 +743,7 @@ plt.rcParams['figure.figsize'] = (10, 6)
 ---
 
 
-```python
+```{python}
 # Load the dataset
 df = pd.read_csv('data/tournament_model_ml.csv')
 
@@ -775,7 +775,7 @@ Feature columns: ['3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 'SRS_diff', 'T
 ---
 
 
-```python
+```{python}
 # Build a pipeline with scaling and PCA
 pca_pipeline = Pipeline([
     ('scaler', StandardScaler()),
@@ -826,7 +826,7 @@ Cumulative explained variance:
 ---
 
 
-```python
+```{python}
 # Visualize the explained variance
 pc_labels = [f'PC{i+1}' for i in range(len(explained_variance))]
 
@@ -855,7 +855,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Build a DataFrame with PCA scores for the training data
 n_components = 3
 
@@ -886,7 +886,7 @@ train_pca_inspect.head()
 ---
 
 
-```python
+```{python}
 # Scatter plot of the first two principal components
 pca_train_plot = train_pca_inspect.copy()
 pca_train_plot['win_label'] = pca_train_plot['win_label'].astype(str)
@@ -920,7 +920,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Compare feature loadings for the first three principal components
 loadings = pd.DataFrame(
     pca_model.components_.T,
@@ -949,7 +949,7 @@ win_pct_diff  0.407 -0.064 -0.046
 ---
 
 
-```python
+```{python}
 # Transform the test set with the same scaler and PCA model
 X_test_scaled = pca_pipeline.named_steps['scaler'].transform(X_test)
 X_test_pca = pd.DataFrame(
@@ -1002,7 +1002,7 @@ This notebook performs principal component analysis on `data/tournament_model_ml
 ---
 
 
-```python
+```{python}
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1019,7 +1019,7 @@ plt.rcParams['figure.figsize'] = (10, 6)
 ---
 
 
-```python
+```{python}
 # Load the dataset
 df = pd.read_csv('data/tournament_model_ml.csv')
 
@@ -1051,7 +1051,7 @@ Feature columns: ['3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 'SRS_diff', 'T
 ---
 
 
-```python
+```{python}
 # Build a pipeline with scaling and PCA
 pca_pipeline = Pipeline([
     ('scaler', StandardScaler()),
@@ -1102,7 +1102,7 @@ Cumulative explained variance:
 ---
 
 
-```python
+```{python}
 # Visualize the explained variance
 pc_labels = [f'PC{i+1}' for i in range(len(explained_variance))]
 
@@ -1131,7 +1131,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Build a DataFrame with PCA scores for the training data
 n_components = 5
 
@@ -1162,7 +1162,7 @@ train_pca_inspect.head()
 ---
 
 
-```python
+```{python}
 # Scatter plot of the first two principal components
 pca_train_plot = train_pca_inspect.copy()
 pca_train_plot['win_label'] = pca_train_plot['win_label'].astype(str)
@@ -1196,7 +1196,7 @@ plt.show()
 ---
 
 
-```python
+```{python}
 # Compare feature loadings for the first three principal components
 loadings = pd.DataFrame(
     pca_model.components_.T,
@@ -1225,7 +1225,7 @@ win_pct_diff  0.407 -0.064 -0.046 -0.304 -0.519
 ---
 
 
-```python
+```{python}
 # Transform the test set with the same scaler and PCA model
 X_test_scaled = pca_pipeline.named_steps['scaler'].transform(X_test)
 X_test_pca = pd.DataFrame(
@@ -1270,7 +1270,7 @@ The PCA-transformed inputs are stored in `X_train_pca` and `X_test_pca`, and the
 ---
 
 
-```python
+```{python}
 
 ```
 
@@ -1284,7 +1284,7 @@ The PCA-transformed inputs are stored in `X_train_pca` and `X_test_pca`, and the
 ---
 
 
-```python
+```{python}
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (accuracy_score, classification_report,
                              confusion_matrix, roc_auc_score)
@@ -1296,7 +1296,7 @@ from scipy.stats import randint
 ---
 
 
-```python
+```{python}
 pca_features = [f'PC{i+1}' for i in range(n_components)]
 
 param_dist = {
@@ -1327,7 +1327,7 @@ search = RandomizedSearchCV(
 ---
 
 
-```python
+```{python}
 search.fit(X_train_pca, y_train)
 
 print(f"\nBest Parameters: {search.best_params_}")
