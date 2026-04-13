@@ -1,5 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
 
 # 1. Load historical data and train the model
 print("Training Model on Historical Matchups...")
@@ -13,11 +15,42 @@ features = [
     '3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 
     'SRS_diff', 'TOV_diff', 'TRB_diff', 'seed_diff', 'win_pct_diff'
 ]
-rf_model = RandomForestClassifier(bootstrap=True, max_depth=19, max_features=None, min_samples_leaf=6, min_samples_split=9, n_estimators=100)
-rf_model.fit(ml_df[features], ml_df['win_label'])
+
+ml_df = ml_df.dropna(subset=features + ['win_label'])
+X = ml_df[features]
+y = ml_df['win_label']
+
+# --- Tuned Random Forest (via RandomizedSearchCV, from notebook) ---
+param_dist = {
+    'n_estimators':      (100, 800),
+    'max_depth':         [None] + list(range(5, 31)),
+    'min_samples_split': randint(2, 20),
+    'min_samples_leaf':  randint(1, 8),
+    'max_features':      ['sqrt', 'log2', None],
+    'bootstrap':         [True, False]
+}
+
+rf = RandomForestClassifier(random_state=42, n_jobs=-1)
+
+search = RandomizedSearchCV(
+    estimator=rf,
+    param_distributions=param_dist,
+    n_iter=50,
+    cv=5,
+    scoring='accuracy',
+    random_state=42,
+    n_jobs=-1,
+    verbose=1
+)
+
+search.fit(X, y)
+rf_model = search.best_estimator_
+
+print(f"\nBest Parameters: {search.best_params_}")
+print(f"Best CV Accuracy: {search.best_score_:.4f}")
 
 # 2. Load the 2026 Team Stats
-print("Loading 2026 Team Data...")
+print("\nLoading 2026 Team Data...")
 try:
     teams_2026 = pd.read_csv('teams_2026.csv')
 except FileNotFoundError:
