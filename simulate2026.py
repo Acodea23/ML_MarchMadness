@@ -13,8 +13,10 @@ features = [
     '3P%_diff', 'AST_diff', 'FG%_diff', 'FT%_diff', 
     'SRS_diff', 'TOV_diff', 'TRB_diff', 'seed_diff', 'win_pct_diff'
 ]
-rf_model = RandomForestClassifier(bootstrap=True, max_depth=19, max_features=None, min_samples_leaf=6, min_samples_split=9, n_estimators=100)
-rf_model.fit(ml_df[features], ml_df['win_label'])
+#rf_model = RandomForestClassifier(bootstrap=True, max_depth=19, max_features=None, min_samples_leaf=6, min_samples_split=9, n_estimators=100)
+#rf_model.fit(ml_df[features], ml_df['win_label'])
+import joblib
+rf_model = joblib.load("final_random_forest.pkl")
 
 # 2. Load the 2026 Team Stats
 print("Loading 2026 Team Data...")
