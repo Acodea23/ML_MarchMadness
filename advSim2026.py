@@ -4,9 +4,9 @@ from sklearn.ensemble import RandomForestClassifier
 # 1. Load ADVANCED data and train the model
 print("Training Advanced Random Forest Model...")
 try:
-    ml_df = pd.read_csv('tournament_model_adv_ml.csv') 
+    ml_df = pd.read_csv('tournament_model_adv_ml_2026.csv') 
 except FileNotFoundError:
-    print("ERROR: Please move 'tournament_model_adv_ml.csv' into this folder!")
+    print("ERROR: Please move 'tournament_model_adv_ml_2026.csv' into this folder!")
     exit()
 
 # List of core metrics
